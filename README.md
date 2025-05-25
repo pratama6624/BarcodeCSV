@@ -1,4 +1,3 @@
-
 # Barcode CSV Realtime Google Sheets Sync
 
 Sistem otomatisasi pemindaian barcode batang dengan visualisasi data **secara real-time** langsung ke **Google Sheets**. Dibuat untuk mempermudah proses stok opname dan pengelolaan data produk dari sistem lama yang masih bersifat manual dan offline.
