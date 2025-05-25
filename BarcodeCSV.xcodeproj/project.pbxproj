@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4139E8BA2DE21648001405E2 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 4139E8B92DE21648001405E2 /* SwiftCSV */; };
+		4139E8BD2DE2166A001405E2 /* CodableCSV in Frameworks */ = {isa = PBXBuildFile; productRef = 4139E8BC2DE2166A001405E2 /* CodableCSV */; };
+		4139E8C02DE21781001405E2 /* CSV in Frameworks */ = {isa = PBXBuildFile; productRef = 4139E8BF2DE21781001405E2 /* CSV */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		4139E87B2DE1A284001405E2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -22,9 +28,22 @@
 		4139E87D2DE1A284001405E2 /* BarcodeCSV */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BarcodeCSV; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		4139E8C92DE34040001405E2 /* Exceptions for "BarcodeCSV" folder in "Compile Sources" phase from "BarcodeCSV" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 4139E8792DE1A284001405E2 /* Sources */;
+			membershipExceptions = (
+				README.md,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4139E87F2DE1A284001405E2 /* BarcodeCSV */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4139E8C92DE34040001405E2 /* Exceptions for "BarcodeCSV" folder in "Compile Sources" phase from "BarcodeCSV" target */,
+			);
 			path = BarcodeCSV;
 			sourceTree = "<group>";
 		};
@@ -35,6 +54,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4139E8C02DE21781001405E2 /* CSV in Frameworks */,
+				4139E8BD2DE2166A001405E2 /* CodableCSV in Frameworks */,
+				4139E8BA2DE21648001405E2 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +99,9 @@
 			);
 			name = BarcodeCSV;
 			packageProductDependencies = (
+				4139E8B92DE21648001405E2 /* SwiftCSV */,
+				4139E8BC2DE2166A001405E2 /* CodableCSV */,
+				4139E8BF2DE21781001405E2 /* CSV */,
 			);
 			productName = BarcodeCSV;
 			productReference = 4139E87D2DE1A284001405E2 /* BarcodeCSV */;
@@ -94,6 +119,7 @@
 				TargetAttributes = {
 					4139E87C2DE1A284001405E2 = {
 						CreatedOnToolsVersion = 16.3;
+						LastSwiftMigration = 1630;
 					};
 				};
 			};
@@ -106,6 +132,11 @@
 			);
 			mainGroup = 4139E8742DE1A284001405E2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4139E8B82DE21648001405E2 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
+				4139E8BB2DE2166A001405E2 /* XCRemoteSwiftPackageReference "CodableCSV" */,
+				4139E8BE2DE21781001405E2 /* XCRemoteSwiftPackageReference "CSV" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4139E87E2DE1A284001405E2 /* Products */;
 			projectDirPath = "";
@@ -250,10 +281,12 @@
 		4139E8852DE1A284001405E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QAM977QT6U;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -261,6 +294,7 @@
 		4139E8862DE1A284001405E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QAM977QT6U;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -291,6 +325,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4139E8B82DE21648001405E2 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
+		4139E8BB2DE2166A001405E2 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dehesa/CodableCSV";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.7;
+			};
+		};
+		4139E8BE2DE21781001405E2 /* XCRemoteSwiftPackageReference "CSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yaslab/CSV.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4139E8B92DE21648001405E2 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4139E8B82DE21648001405E2 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+		4139E8BC2DE2166A001405E2 /* CodableCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4139E8BB2DE2166A001405E2 /* XCRemoteSwiftPackageReference "CodableCSV" */;
+			productName = CodableCSV;
+		};
+		4139E8BF2DE21781001405E2 /* CSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4139E8BE2DE21781001405E2 /* XCRemoteSwiftPackageReference "CSV" */;
+			productName = CSV;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4139E8752DE1A284001405E2 /* Project object */;
 }
