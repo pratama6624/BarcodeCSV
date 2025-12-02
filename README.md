@@ -1,27 +1,29 @@
-# vapor-flashsale-service
+# Vapor Flashsale Benchmark
 
-💧 A project built with the Vapor web framework.
+Project kecil untuk membandingkan kecepatan **transaksi stok flash sale**:
 
-## Getting Started
+- Versi 1: pakai database transaksional (PostgreSQL) dengan transaksi biasa.
+- Versi 2: pakai Redis sebagai gate stok (atomic counter).
 
-To build the project using the Swift Package Manager, run the following command in the terminal from the root of the project:
+Tujuan utama: mengukur perbedaan performa / throughput pada skenario "siapa cepat dia dapat".
+
+## Tech Stack
+
+- Swift + Vapor 4
+- Fluent + PostgreSQL
+- Redis
+
+## Setup
+
 ```bash
-swift build
-```
+git clone https://github.com/USERNAME/vapor-flashsale-benchmark.git
+cd vapor-flashsale-benchmark
 
-To run the project and start the server, use the following command:
-```bash
+# Jalankan Postgres & Redis
+docker compose up -d
+
+# Install dependency
+swift package update
+
+# Jalankan server
 swift run
-```
-
-To execute tests, use the following command:
-```bash
-swift test
-```
-
-### See more
-
-- [Vapor Website](https://vapor.codes)
-- [Vapor Documentation](https://docs.vapor.codes)
-- [Vapor GitHub](https://github.com/vapor)
-- [Vapor Community](https://github.com/vapor-community)
