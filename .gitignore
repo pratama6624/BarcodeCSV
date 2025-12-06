@@ -1,1 +1,23 @@
 BarcodeCSV/BarcodeCSV/credentials.json
+
+# Swift / Vapor Build & Dependencies
+.build/
+.swiftpm/
+Packages/
+*.xcodeproj/xcuserdata/
+
+# macOS Cache
+.DS_Store
+
+# Logs
+*.log
+/Logs/
+
+# Environment Variables & Secrets
+.env
+
+# Docker-specific files (optional, adjust as needed)
+# Abaikan folder volume data, misal untuk PostgreSQL
+/data/ 
+# Abaikan semua file cache atau sementara
+.dockerignore

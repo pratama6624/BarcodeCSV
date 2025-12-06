@@ -21,9 +21,9 @@ volumes:
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
   DATABASE_HOST: db
-  DATABASE_NAME: &db_name vapor_database
-  DATABASE_USERNAME: &db_username vapor_username
-  DATABASE_PASSWORD: &db_password vapor_password
+  DATABASE_NAME: &db_name flashsale_service_database
+  DATABASE_USERNAME: &db_username flashsale_service_username
+  DATABASE_PASSWORD: &db_password flashsale_service_password
   
 services:
   app:
@@ -70,3 +70,24 @@ services:
       POSTGRES_DB: *db_name
     ports:
       - '5432:5432'
+      
+  redis:
+    image: redis:7
+    container_name: vapor_flashsale_redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    container_name: vapor_flashsale_pgadmin
+#    restart: always
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: admin@example.com
+#      PGADMIN_DEFAULT_PASSWORD: supersecret
+#      # TAMBAHAN: Izinkan domain khusus .test
+#      ALLOW_SPECIAL_EMAIL_DOMAINS: .test
+#    ports:
+#      - "5050:80"
+#    depends_on:
+#      - db
